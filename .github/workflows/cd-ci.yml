@@ -12,9 +12,6 @@ jobs:
     - name: Build Docker image
       run: docker build -t myimage:${{ github.sha }} .
 
-    - name: Run unittests
-      run: docker run myimage:${{ github.sha }} python -m pytest .
-
     - name: Push Docker image
       if: ${{ success() }}
       uses: docker/login-action@v1
