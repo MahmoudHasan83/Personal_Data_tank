@@ -20,4 +20,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         run: |
           docker tag myimage:${{ github.sha }} myusername/myimage:${{ github.sha }}
-          docker push myusername/myimage:${{ github.sha }}er run my_image pytest
+          docker push myusername/myimage:${{ github.sha }} run my_image pytest
