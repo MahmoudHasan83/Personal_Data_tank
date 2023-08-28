@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build Docker image
-      run: docker build -t myimage:${{ github.sha }} .
+      run: docker build -t de-morgen:${{ github.sha }} .
 
     - name: Push Docker image
       if: ${{ success() }}
@@ -19,5 +19,5 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         run: |
-          docker tag myimage:${{ github.sha }} myusername/myimage:${{ github.sha }}
-          docker push myusername/myimage:${{ github.sha }} run my_image pytest
+          docker tag de-morgen:${{ github.sha }} secrets.DOCKERHUB_USERNAME/de-morgen:${{ github.sha }}
+          docker push secrets.DOCKERHUB_USERNAME/de-morgen:${{ github.sha }} run my_image pytest
