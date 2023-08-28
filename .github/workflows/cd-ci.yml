@@ -18,6 +18,6 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        run: |
-          docker tag de-morgen:${{ github.sha }} mahmoudhasan11/de-morgen:${{ github.sha }}
-          docker push mahmoudhasan11/de-morgen:${{ github.sha }}
+    - run: |
+        docker tag de-morgen:${{ github.sha }} mahmoudhasan11/de-morgen:${{ github.sha }}
+        docker push mahmoudhasan11/de-morgen:${{ github.sha }}
